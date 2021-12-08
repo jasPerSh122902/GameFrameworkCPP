@@ -84,7 +84,7 @@ public:
 
     bool removeComponent(const char*) {};
 
-    Componet* getCOmponent(const char*) {};
+    Componet* getComponent(const char*) {};
 
 
 protected:
