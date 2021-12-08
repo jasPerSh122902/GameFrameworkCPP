@@ -2,6 +2,8 @@
 class Transform2D;
 class Collider;
 
+class Componet;
+
 class Actor
 {
 public:
@@ -76,10 +78,20 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
+    Componet* addComponent(Componet*) {};
+
+    bool removeComponent(Componet*) {};
+
+    bool removeComponent(const char*) {};
+
+    Componet* getCOmponent(const char*) {};
+
+
 protected:
     const char* m_name;
 
 private:
+    Componet** m_comp;
     bool m_started;
     Transform2D* m_transform;
     Collider* m_collider;
