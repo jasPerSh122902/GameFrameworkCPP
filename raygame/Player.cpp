@@ -21,3 +21,19 @@ void Player::getStarted()
 void Player::onCollision()
 {
 }
+
+void Player::start()
+{
+}
+
+void Player::update(float deltaTime)
+{
+}
+
+void Player::draw()
+{
+}
+
+void Player::end()
+{
+}

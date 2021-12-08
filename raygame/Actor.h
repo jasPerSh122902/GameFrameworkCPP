@@ -6,7 +6,17 @@ class Componet;
 
 class Actor
 {
+private:
+    Componet** m_comp;
+    int m_componetsCount;
+    bool m_started;
+    Transform2D* m_transform;
+    Collider* m_collider;
+
 public:
+
+    
+
     Actor();
     ~Actor();
 
@@ -78,22 +88,15 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
-    Componet* addComponent(Componet*) {};
+    Componet* addComponent(Componet* actor_componet) ;
 
-    bool removeComponent(Componet*) {};
+    bool removeComponent(Componet* actor_componet);
+    bool removeComponent(const char* actor_componet);
 
-    bool removeComponent(const char*) {};
-
-    Componet* getComponent(const char*) {};
+    Componet* getComponent(const char* actor_componet);
 
 
 protected:
     const char* m_name;
-
-private:
-    Componet** m_comp;
-    bool m_started;
-    Transform2D* m_transform;
-    Collider* m_collider;
 };
 

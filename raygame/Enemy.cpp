@@ -25,3 +25,19 @@ void Enemy::onCollision()
 {
 
 }
+
+void Enemy::start()
+{
+}
+
+void Enemy::update(float deltaTime)
+{
+}
+
+void Enemy::draw()
+{
+}
+
+void Enemy::end()
+{
+}
