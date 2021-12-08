@@ -1,19 +1,21 @@
 #pragma once
 #include "Actor.h"
+#include "Collider.h"
+
 class Player :
 	public Actor
 {
 public:
     Player();
+
     ~Player();
 
     /// <param name="x">Position on the x axis</param>
     /// <param name="y">Position on the y axis</param>
     /// <param name="name">The name of this actor.</param>
-    Player(float x, float y, int health, const char* name, Collider collider);
+    Player(float x, float y, int health, const char* name, ColliderType colliderType = BOX);
 
     void getStarted();
-
 
     void onCollision();
 

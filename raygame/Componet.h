@@ -33,5 +33,6 @@ public:
 private:
 	Actor* m_owner;
 	const char* m_name;
+	bool m_stated;
 };
 

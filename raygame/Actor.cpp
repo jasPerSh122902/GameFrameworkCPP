@@ -14,7 +14,6 @@ Actor::~Actor()
     delete m_transform;
 }
 
-
 Actor::Actor(float x, float y, const char* name = "Actor")
 {
     //Initialze default values
@@ -26,10 +25,6 @@ Actor::Actor(float x, float y, const char* name = "Actor")
 void Actor::start()
 {
     m_started = true;
-}
-
-void Actor::onCollision(Actor* other)
-{
 }
 
 Componet* Actor::addComponent(Componet* actor_componet)
@@ -108,6 +103,11 @@ void Actor::draw()
 void Actor::end()
 {
     m_started = false;
+}
+
+void Actor::onCollision(Actor* other)
+{
+
 }
 
 void Actor::onDestroy()

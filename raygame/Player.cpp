@@ -7,10 +7,14 @@ Player::Player()
 
 Player::~Player()
 {
+	
 }
 
-Player::Player(float x, float y, int health, const char* name, Collider collider)
+Player::Player(float x, float y, int health, const char* name, ColliderType colliderType)
 {
+	health = m_health = 5;
+	name = m_name;
+	
 }
 
 void Player::getStarted()
@@ -20,6 +24,7 @@ void Player::getStarted()
 
 void Player::onCollision()
 {
+
 }
 
 void Player::start()
@@ -28,12 +33,15 @@ void Player::start()
 
 void Player::update(float deltaTime)
 {
+	update(deltaTime);
 }
 
 void Player::draw()
 {
+
 }
 
 void Player::end()
 {
+	
 }

@@ -1,19 +1,20 @@
 #pragma once
 #include "Actor.h"
+#include "Collider.h"
 class Enemy :
 	public Actor
 {
 public:
     Enemy();
+
     ~Enemy();
 
     /// <param name="x">Position on the x axis</param>
     /// <param name="y">Position on the y axis</param>
     /// <param name="name">The name of this actor.</param>
-    Enemy(float x, float y,int health, const char* name, Collider collider);
+    Enemy(float x, float y,int health, const char* name, ColliderType colliderType = CIRCLE);
 
     void getStarted();
-    
 
     void onCollision();
 
@@ -37,7 +38,6 @@ public:
     /// Called when this actor is removed from the scene
     /// </summary>
     virtual void end();
-
 
 private:
    bool m_started;

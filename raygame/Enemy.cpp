@@ -5,7 +5,7 @@ Enemy::Enemy()
 
 }
 
-Enemy::Enemy(float x, float y,int health, const char* name, Collider collider)
+Enemy::Enemy(float x, float y,int health, const char* name, ColliderType colliderType)
 {
 	name = m_name;
 	health = m_health = 5;
