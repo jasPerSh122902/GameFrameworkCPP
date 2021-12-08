@@ -94,6 +94,7 @@ Componet* Actor::getComponent(const char* actor_componet)
 
 void Actor::update(float deltaTime)
 {
+
 }
 
 void Actor::draw()

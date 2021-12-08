@@ -2,6 +2,8 @@
 #include "Actor.h"
 #include "Collider.h"
 
+class Enemey;
+
 class Player :
 	public Actor
 {
