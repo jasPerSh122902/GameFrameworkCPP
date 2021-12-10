@@ -1,22 +1,26 @@
 #include "Movement.h"
+#include "Transform2D.h"
+#include <mftransform.h>
+
 
 
 void Movement::Update(float deltaTime)
 {
-	 MathLibrary::Vector2 moveDirection = MathLibrary::Vector2(Directionx, Directiony);
+	MathLibrary::Matrix3 m_transform = MathLibrary::Matrix3();
+	 MathLibrary::Vector2 moveDirection = MathLibrary::Vector2(m_transform.m00, m_transform.m10);
 
 	//caculates the veclocity 
-	m_velocity = moveDirection.normalize* speed * deltaTime;
+	m_velocity += moveDirection.normalize* m_maxSpeed * deltaTime;
 	//addes the velocity to the localPosistion
-	LocalPosistion += m_velocity;
+	
+}
+
+void Movement::Start()
+{
 
 }
 
-/// <summary>
-/// Returns the new Vector3 for the localPosistion and sets the Translation with the values of x, y.
-/// </summary>
-MathLibrary::Vector2 LocalPosistion
+void Movement::End()
 {
-    //takes in a posisition on the matrix...
-     return MathLibrary::Vector2()
+
 }

@@ -37,13 +37,13 @@ Componet* Actor::addComponent(Componet* actor_componet)
     int j = 0;
     for (int i = 0; i < m_componetsCount; i++)
     {
-        tempArray[i] = m_comp[i];
+        tempArray[i] = m_componet[i];
         j++;
     }
 
     tempArray[j] = actor_componet;
     m_componetsCount + 1;
-    m_comp = tempArray;
+    m_componet = tempArray;
 
     return actor_componet;
 }
@@ -62,9 +62,9 @@ bool Actor::removeComponent(Componet* actor_componet)
     //Copy values from the old array to the new array
     for (int i = 0; i < m_componetsCount; i++)
     {
-        if (actor_componet != m_comp[i])
+        if (actor_componet != m_componet[i])
         {
-            newArray[j] = m_comp[i];
+            newArray[j] = m_componet[i];
             j++;
         }
         else
@@ -75,8 +75,8 @@ bool Actor::removeComponent(Componet* actor_componet)
     //Set the old array to the new array
     if (componentRemoved)
     {
-        m_comp = newArray;
-        m_componetsCount--;
+        m_componet = newArray;
+        m_componetsCount--;//decrements the counter.
     }
     //Return whether or not the removal was successful
     return componentRemoved;
@@ -86,8 +86,8 @@ Componet* Actor::getComponent(const char* actor_componet)
 {
     for (int i = 0; i < m_componetsCount; i++)
     {
-        if (m_comp[i]->getName() == actor_componet)
-            return m_comp[i];
+        if (m_componet[i]->getName() == actor_componet)
+            return m_componet[i];
     }
     return nullptr;
 }

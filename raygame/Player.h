@@ -1,6 +1,8 @@
 #pragma once
 #include "Actor.h"
 #include "Collider.h"
+#include "Movement.h"
+#include "Input.h"
 
 class Enemey;
 
@@ -46,5 +48,6 @@ private:
     bool m_started;
     const char* m_name;
     int m_health;
+    float m_timer;
 };
 

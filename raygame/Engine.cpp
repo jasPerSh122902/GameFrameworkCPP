@@ -1,6 +1,8 @@
 #include "Engine.h"
 #include "raylib.h"
 #include "Transform2D.h"
+#include "Player.h"
+#include "Enemy.h"
 
 bool Engine::m_applicationShouldClose = false;
 Scene** Engine::m_scenes = new Scene*;
@@ -45,7 +47,7 @@ void Engine::draw()
 {
 	BeginDrawing();
 
-	ClearBackground(BLACK);
+	ClearBackground(DARKGRAY);
 
 	m_scenes[m_currentSceneIndex]->draw();
 	m_scenes[m_currentSceneIndex]->drawUI();

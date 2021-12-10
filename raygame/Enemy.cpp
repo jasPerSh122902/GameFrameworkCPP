@@ -1,5 +1,7 @@
 #include "Enemy.h"
 
+
+
 Enemy::Enemy()
 {
 
@@ -32,6 +34,7 @@ void Enemy::start()
 
 void Enemy::update(float deltaTime)
 {
+	Actor::addComponent(m_movementptr*::Update(deltaTime));
 }
 
 void Enemy::draw()

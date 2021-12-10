@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Movement.h"
 #include "raylib.h"
+#include "Engine.h"
 
 Player::Player()
 {
@@ -27,26 +28,22 @@ void Player::getStarted()
 void Player::onCollision()
 {
     //if actor is touched by teh enenmy end the game
-    if (Actor.Enemey && _timer > 1)
+    if (Actor::m_name = "Enemy")
     {
         //decrement health
         m_health--;
 
-        //when you collide go orange
-        Color(ORANGE);
         //closes window when player dies
-        if (Health <= 0)
+        if (m_health <= 0)
         {
-            Engine.CloseApplication();
+            Engine::CloseApplication();
         }
-
-        //reset time
-        _timer = 0;
     }
 }
 
 void Player::start()
 {
+
 }
 
 void Player::update(float deltaTime)

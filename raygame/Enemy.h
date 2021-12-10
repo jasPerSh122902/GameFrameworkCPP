@@ -1,6 +1,7 @@
 #pragma once
 #include "Actor.h"
 #include "Collider.h"
+#include "Movement.h"
 class Enemy :
 	public Actor
 {
@@ -43,5 +44,8 @@ private:
    bool m_started;
    const char* m_name;
    int m_health;
+
+   Movement m_movement =  Movement();
+   Componet* m_movementptr =  new Movement();
 };
 

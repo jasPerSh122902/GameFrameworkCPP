@@ -7,7 +7,7 @@ class Componet;
 class Actor
 {
 private:
-    Componet** m_comp;
+    Componet** m_componet;
     int m_componetsCount;
     bool m_started;
     Transform2D* m_transform;
