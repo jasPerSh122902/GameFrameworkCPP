@@ -27,6 +27,9 @@ void Sprite::draw()
 	m_width = getOwner()->getTransform()->getScale().x;
 	m_height = getOwner()->getTransform()->getScale().y;
 
+	m_texture->width = m_width;
+	m_texture->height = m_height;
+
 	//gets the world POSISTION of the owner
 	//top is x and the bottom is y
 	//makes the up with the transform of xy, and the yy
@@ -46,8 +49,9 @@ void Sprite::draw()
 	//Creates a Raylib posistion using vector2
 	RAYLIB_H::Vector2 rayPos = { position.x, position.y };
 
-	//gets the ROTATSHION of the owner
+	//gets the ROTATSHION of the owner transform
 	float rotation = atan2(getOwner()->getTransform()->getGlobalMatrix()->m10, getOwner()->getTransform()->getGlobalMatrix()->m00);
 
-
+	//DRAW THE SPRITE
+	RAYLIB_H::DrawTextureEx(*m_texture, rayPos, (float)(rotation * 180.0f / PI), 1, BLUE);
 }
