@@ -1,26 +1,18 @@
 #include "Movement.h"
-#include "Transform2D.h"
-#include <mftransform.h>
+#include "Charactor.h"
+#include "Componet.h"
+#include "Actor.h"
 
-
-
-void Movement::Update(float deltaTime)
+Movement::Movement(Actor* owner, float maxSpeed) 
 {
-	MathLibrary::Matrix3 m_transform = MathLibrary::Matrix3();
-	 MathLibrary::Vector2 moveDirection = MathLibrary::Vector2(m_transform.m00, m_transform.m10);
-
-	//caculates the veclocity 
-	m_velocity += moveDirection.normalize* m_maxSpeed * deltaTime;
-	//addes the velocity to the localPosistion
-	
+	m_maxSpeed = maxSpeed;
 }
 
-void Movement::Start()
+void Movement::update(float deltaTime)
 {
+	MathLibrary::Vector2 position = getOwner()->getTransform()->getLocalPosition();
+	MathLibrary::Vector2 movement = MathLibrary::Vector2((position.x + (m_maxSpeed * deltaTime * getOwner()->getTransform()->getForward().x)),
+		(position.y + (m_maxSpeed * deltaTime * getOwner()->getTransform()->getForward().y)));
 
-}
-
-void Movement::End()
-{
-
+	getOwner()->getTransform()->setLocalPosition(movement);
 }
