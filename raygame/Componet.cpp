@@ -3,14 +3,13 @@
 Componet::Componet()
 {
 	m_owner = nullptr;
-	m_name = "Null";
+	m_name = nullptr;
 	m_stated = false;
 }
 
 Componet::Componet( const char* name)
 {
 	m_name = name;
-	m_stated = false;
 }
 
 
@@ -21,7 +20,7 @@ Componet::~Componet()
 
 void Componet::assignOwner(Actor* owner)
 {
-	if (!getOwner())
+	if (getOwner())
 		return;
 
 	m_owner = owner;

@@ -44,7 +44,7 @@ void Sprite::draw()
 	//sets the position to the forawd...
 	position = position - (forward * getWidth() / 2);
 	//sets the position to the up...
-	position = position - (up * getHight() / 2);
+	position = position - (up.getNormalized() * getHight() / 2);
 
 	//Creates a Raylib posistion using vector2
 	RAYLIB_H::Vector2 rayPos = { position.x, position.y };

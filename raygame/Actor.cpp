@@ -25,8 +25,6 @@ Actor::Actor(float x, float y, const char* name = "Actor")
 void Actor::start()
 {
     m_started = true;
-    
-    
 }
 
 Componet* Actor::addComponent(Componet* actor_componet)
@@ -48,6 +46,11 @@ Componet* Actor::addComponent(Componet* actor_componet)
 
     //Set the last value in the new array
     tempArray[m_componetsCount] = actor_componet;
+    if (m_componetsCount > 1)
+        delete[] m_componet;
+
+    else if (m_componetsCount == 1)
+        delete m_componet;
     m_componet = tempArray;
     //increments the counter
     m_componetsCount++;
@@ -93,13 +96,13 @@ bool Actor::removeComponent(Componet* componet)
     //checks to see if The removed is true...
     if (componentRemoved)
     {
+        delete[] m_componet;
         //...sets the old array to the new array
         m_componet = newArray;
         m_componetsCount--;//decrements the counter.
         //deletes the componet
         delete(componet);
     }
-    //delets the array
     delete[] newArray;
     //Return whether or not the removal was successful
     return componentRemoved;
@@ -113,6 +116,7 @@ bool Actor::removeComponent(const char* name)
     bool componentRemoved = false;
     //Create a new array with a size one less than our old array
     Componet* componetoDelete = nullptr;
+
     Componet** newArray = new Componet * [m_componetsCount - 1];
 
     //Create variable to access tempArray index
@@ -138,14 +142,15 @@ bool Actor::removeComponent(const char* name)
     //checks to see if The removed is true...
     if (componentRemoved)
     {
+        delete[] m_componet;
         //...sets the old array to the new array
         m_componet = newArray;
         m_componetsCount--;//decrements the counter.
         //deletes the componet
         delete componetoDelete;
     }
-    //delets the array
-    delete[] newArray;
+    else
+        delete[] newArray;
     //Return whether or not the removal was successful
     return componentRemoved;
 }
