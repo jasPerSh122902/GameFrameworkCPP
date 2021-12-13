@@ -8,7 +8,7 @@ class Actor
 {
 private:
     Componet** m_componet;
-    int m_componetsCount;
+    unsigned int m_componetsCount;
     bool m_started;
     Transform2D* m_transform;
     Collider* m_collider;
@@ -51,6 +51,12 @@ public:
     const char* getName() { return m_name; }
 
     /// <summary>
+    /// sets the name for the actor
+    /// </summary>
+    /// <param name="name"></param>
+    void setName(const char* name) { m_name = name; }
+
+    /// <summary>
     /// Called during the first update after an actor is added to a scene.
     /// </summary>
     virtual void start();
@@ -88,12 +94,38 @@ public:
     /// <param name="other">The actor this actor collided with.</param>
     virtual void onCollision(Actor* other);
 
+    /// <summary>
+    /// adds the first componet instace attached to this actor
+    /// that mathches the name
+    /// </summary>
+    /// <param name="actor_componet"></param>
+    /// <returns></returns>
     Componet* addComponent(Componet* actor_componet) ;
 
-    bool removeComponent(Componet* actor_componet);
-    bool removeComponent(const char* actor_componet);
+    /// <summary>
+    /// gets the first componet instace attached to this actor
+    /// that mathches the name
+    /// </summary>
+    /// <param name="actor_componet">the name of the componet instance</param>
+    /// <returns></returns>
+    Componet* getComponent(const char* componetName);
 
-    Componet* getComponent(const char* actor_componet);
+    /// <summary>
+    /// removes the first componet instace attached to this actor
+    /// that mathches the name
+    /// </summary>
+    /// <param name="actor_componet">the componet instance</param>
+    /// <returns></returns>
+    bool removeComponent(Componet* componet);
+    /// <summary>
+    ///removes the first componet instace attached to this actor
+    /// that mathches the name
+    /// </summary>
+    /// <param name="actor_componet">the name of the componet instance</param>
+    /// <returns></returns>
+    bool removeComponent(const char* name);
+
+    
 
 
 protected:

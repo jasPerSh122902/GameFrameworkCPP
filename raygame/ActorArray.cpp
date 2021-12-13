@@ -13,8 +13,9 @@ void ActorArray::addActor(Actor* actor)
     //Set the last value in the new array to be the actor we want to add
     appendedArray[m_actorCount] = actor;
     //Set old array to hold the values of the new array
-    m_actors = appendedArray;
     m_actorCount++;
+    m_actors = appendedArray;
+    
 }
 
 bool ActorArray::removeActor(Actor* actor)

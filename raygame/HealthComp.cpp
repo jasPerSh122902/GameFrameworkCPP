@@ -28,4 +28,8 @@ void HealthComp::onCollision(Actor* actor)
 	{
 		m_currentHealth--;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

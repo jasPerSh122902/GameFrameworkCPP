@@ -9,6 +9,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{d48f2df6-1a45-451d-a3ff-1aff06ab0aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Componets">
+      <UniqueIdentifier>{7912e77b-fd4f-4319-a2b1-94acc2b26488}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -41,14 +47,27 @@
     <ClCompile Include="Componet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Input.cpp">
+=======
+    <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+>>>>>>> master
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Movement.cpp">
+    <ClCompile Include="Charactor.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HealthComp.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="Movement.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Componets</Filter>
     </ClCompile>
     <ClCompile Include="Charactor.cpp">
       <Filter>Source Files</Filter>
@@ -57,10 +76,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
+    <ClCompile Include="MainScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files</Filter>
+=======
+    <ClCompile Include="SHOOT.cpp">
+      <Filter>Componets</Filter>
+>>>>>>> master
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,14 +118,27 @@
     <ClInclude Include="Componet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Input.h">
+=======
+    <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+>>>>>>> master
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Movement.h">
+    <ClInclude Include="Charactor.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HealthComp.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="Movement.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Componets</Filter>
     </ClInclude>
     <ClInclude Include="Charactor.h">
       <Filter>Header Files</Filter>
@@ -107,10 +147,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="MainScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+    <ClInclude Include="SHOOT.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprite\Larrot.png">
+      <Filter>Sprite</Filter>
+    </Image>
+    <Image Include="Sprite\Learth.png">
+      <Filter>Sprite</Filter>
+    </Image>
+>>>>>>> master
   </ItemGroup>
 </Project>

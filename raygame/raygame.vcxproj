@@ -158,9 +158,11 @@
     <ClCompile Include="HealthComp.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainScene.cpp" />
     <ClCompile Include="Movement.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SHOOT.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Transform2D.cpp" />
   </ItemGroup>
@@ -176,11 +178,17 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="HealthComp.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MainScene.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SHOOT.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Transform2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Sprite\Larrot.png" />
+    <Image Include="Sprite\Learth.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

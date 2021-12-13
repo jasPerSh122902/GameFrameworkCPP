@@ -18,3 +18,7 @@ private:
 	int m_maxHealth;
 	float m_firingCooldown;
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> master

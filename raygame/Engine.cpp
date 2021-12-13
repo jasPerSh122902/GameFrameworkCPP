@@ -3,6 +3,7 @@
 #include "Transform2D.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "MainScene.h"
 
 bool Engine::m_applicationShouldClose = false;
 Scene** Engine::m_scenes = new Scene*;
@@ -37,14 +38,16 @@ void Engine::start()
 	scene->addActor(enemy);
 
 	//Start the scene
-	m_currentSceneIndex = addScene(new Scene());
+	m_currentSceneIndex = addScene(new MainScene());
 	m_scenes[m_currentSceneIndex]->start();
+
 }
 
 void Engine::update(float deltaTime)
 {
 	//Clean up actors marked for destruction
 	destroyActorsInList();
+	
 
 	//Update scene
 	m_scenes[m_currentSceneIndex]->update(deltaTime);
@@ -55,7 +58,7 @@ void Engine::draw()
 {
 	BeginDrawing();
 
-	ClearBackground(DARKGRAY);
+	ClearBackground(BLACK);
 
 	m_scenes[m_currentSceneIndex]->draw();
 	m_scenes[m_currentSceneIndex]->drawUI();
