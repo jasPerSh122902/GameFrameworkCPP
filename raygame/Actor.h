@@ -15,7 +15,7 @@ private:
 
 public:
 
-    
+
 
     Actor();
     ~Actor();
@@ -100,7 +100,7 @@ public:
     /// </summary>
     /// <param name="actor_componet"></param>
     /// <returns></returns>
-    Componet* addComponent(Componet* actor_componet) ;
+    Componet* addComponent(Componet* actor_componet);
 
     /// <summary>
     /// gets the first componet instace attached to this actor
@@ -125,10 +125,9 @@ public:
     /// <returns></returns>
     bool removeComponent(const char* name);
 
-    
+
 
 
 protected:
     const char* m_name;
 };
-

@@ -1,20 +1,6 @@
 #include "Sprite.h"
 #include "Actor.h"
 #include "Transform2D.h"
-<<<<<<< HEAD
-
-Sprite::Sprite(const char* path, Actor* owner)
-{
-	m_texture = RAYLIB_H::LoadTexture(path);
-}
-
-void Sprite::draw()
-{
-	RAYLIB_H::DrawTexture(m_texture, getOwner()->getTransform()->getWorldPosition().x, getOwner()->getTransform()->getWorldPosition().y, BLUE);
-}
-
-
-=======
 #include <raylib.h>
 #include <Matrix3.h>
 #include <cmath>
@@ -47,7 +33,7 @@ void Sprite::draw()
 	//gets the world POSISTION of the owner
 	//top is x and the bottom is y
 	//makes the up with the transform of xy, and the yy
-	MathLibrary::Vector2 up = { getOwner()->getTransform()->getGlobalMatrix()->m01, 
+	MathLibrary::Vector2 up = { getOwner()->getTransform()->getGlobalMatrix()->m01,
 								getOwner()->getTransform()->getGlobalMatrix()->m11 };
 	//gets the forward of the actor
 	MathLibrary::Vector2 forward = getOwner()->getTransform()->getForward();
@@ -69,4 +55,3 @@ void Sprite::draw()
 	//DRAW THE SPRITE
 	RAYLIB_H::DrawTextureEx(*m_texture, rayPos, (float)(rotation * 180.0f / PI), 1, BLUE);
 }
->>>>>>> master

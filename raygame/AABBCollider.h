@@ -44,4 +44,3 @@ private:
 	float m_width;
 	float m_height;
 };
-

@@ -137,7 +137,7 @@ bool Actor::removeComponent(const char* name)
             componentRemoved = true;
             componetoDelete = m_componet[i];
         }
-            
+
     }
     //checks to see if The removed is true...
     if (componentRemoved)

@@ -15,7 +15,7 @@ void ActorArray::addActor(Actor* actor)
     //Set old array to hold the values of the new array
     m_actorCount++;
     m_actors = appendedArray;
-    
+
 }
 
 bool ActorArray::removeActor(Actor* actor)

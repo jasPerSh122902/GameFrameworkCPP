@@ -22,15 +22,9 @@ void Character::start()
 {
 	HealthComp* healthComponent = new HealthComp(m_maxHealth, this);
 	addComponent(healthComponent);
-<<<<<<< HEAD
-	Movement* moveComponent = new Movement(this, m_speed);
-	addComponent(moveComponent);
-	Sprite* spriteComponent = new Sprite("Sprites/player.png", this);
-=======
 	Movement* moveComponent = new Movement("Movement");
 	addComponent(moveComponent);
 	Sprite* spriteComponent = new Sprite("Sprite/Larrot.png");
->>>>>>> master
 	addComponent(spriteComponent);
 }
 
