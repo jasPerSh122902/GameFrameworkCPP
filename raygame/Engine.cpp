@@ -28,6 +28,14 @@ void Engine::start()
 	InitWindow(screenWidth, screenHeight, "Intro To C++");
 	SetTargetFPS(0);
 
+	Scene* scene = new Scene();
+
+	Player* player = new Player(10, 10, 10, 10, 10);
+	Enemy* enemy = new Enemy(19, 10, "enemy1", 10, 10, player);
+
+	scene->addActor(player);
+	scene->addActor(enemy);
+
 	//Start the scene
 	m_currentSceneIndex = addScene(new Scene());
 	m_scenes[m_currentSceneIndex]->start();
@@ -47,7 +55,7 @@ void Engine::draw()
 {
 	BeginDrawing();
 
-	ClearBackground(DARKGRAY);
+	ClearBackground(BLACK);
 
 	m_scenes[m_currentSceneIndex]->draw();
 	m_scenes[m_currentSceneIndex]->drawUI();

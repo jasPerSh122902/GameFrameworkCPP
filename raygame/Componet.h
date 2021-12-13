@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+
 class Componet :
 	public Actor
 {
@@ -14,13 +15,13 @@ public:
 	virtual ~Componet();
 
 	//gets the name of the componet
-	const char* getName();
+	const char* getName() { return m_name; }
 
 	//gets the ower that is assigned to the componet
-	Actor* getOwner();
+	Actor* getOwner() { return m_owner; }
 
 	//starts the componet 
-	virtual void start();
+	virtual void start() { m_stated = true; }
 	//updates each componet by deltaTime
 	virtual void update(float deltaTime);
 	//draws the conponet
@@ -28,7 +29,7 @@ public:
 	//is the end for the conponet
 	virtual void end();
 	//gives infomation on the collision
-	virtual void oncollison(Actor*);
+	virtual void oncollison(Actor* actor);
 
 private:
 	Actor* m_owner;

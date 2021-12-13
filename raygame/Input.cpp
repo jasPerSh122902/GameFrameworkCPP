@@ -1,11 +1,19 @@
 #include "Input.h"
+#include "Actor.h"
+#include "Transform2D.h"
 
-bool Input::getKeyDown(int key)
+Input::Input(Actor* owner) { }
+
+MathLibrary::Vector2 Input::getMoveAxis()
 {
-	return RAYLIB_H::IsKeyDown((KeyboardKey)key);
+	float xDirection = -RAYLIB_H::IsKeyDown(KEY_A) + RAYLIB_H::IsKeyDown(KEY_D);
+	float yDirection = -RAYLIB_H::IsKeyDown(KEY_S) + RAYLIB_H::IsKeyDown(KEY_W);
+
+	return MathLibrary::Vector2(xDirection, yDirection);
+
 }
 
-bool Input::getKeyPressed(int key)
+void Input::update(float deltaTime)
 {
-	return RAYLIB_H::IsKeyPressed((KeyboardKey)key);
+	getOwner()->getTransform()->setForward(getMoveAxis());
 }

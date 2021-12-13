@@ -19,3 +19,19 @@ Componet::~Componet()
 {
 
 }
+
+void Componet::update(float deltaTime)
+{
+}
+
+void Componet::draw()
+{
+}
+
+void Componet::end()
+{
+}
+
+void Componet::oncollison(Actor* actor)
+{
+}

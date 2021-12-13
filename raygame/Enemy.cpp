@@ -1,46 +1,15 @@
 #include "Enemy.h"
+#include "Movement.h"
 
-
-
-Enemy::Enemy()
+Enemy::Enemy(float x, float y, const char* name, float speed, int maxHealth, Actor* targetActor) :
+	Character::Character(x, y, name, speed, maxHealth)
 {
-
-}
-
-Enemy::Enemy(float x, float y,int health, const char* name, ColliderType colliderType)
-{
-	name = m_name;
-	health = m_health = 5;
-
-}
-Enemy::~Enemy()
-{
-	delete m_name;
-}
-
-void Enemy::getStarted()
-{
-	m_started = true;
-}
-
-void Enemy::onCollision()
-{
-
+	m_targetActor = targetActor;
 }
 
 void Enemy::start()
 {
-}
-
-void Enemy::update(float deltaTime)
-{
-	Actor::addComponent(m_movementptr*::Update(deltaTime));
-}
-
-void Enemy::draw()
-{
-}
-
-void Enemy::end()
-{
+	Character::start();
+	Movement* movementComponet = new Movement(this, 5);
+	addComponent(movementComponet);
 }

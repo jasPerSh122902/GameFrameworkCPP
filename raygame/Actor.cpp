@@ -29,7 +29,7 @@ void Actor::start()
 
 Componet* Actor::addComponent(Componet* actor_componet)
 {
-    if (actor_componet->getOwner != nullptr)
+    if (actor_componet->getOwner() != nullptr)
         return nullptr;
 
     Componet** tempArray = new Componet * [m_componetsCount + 1];
@@ -50,7 +50,7 @@ Componet* Actor::addComponent(Componet* actor_componet)
 
 bool Actor::removeComponent(Componet* actor_componet)
 {
-    if (actor_componet->getOwner != nullptr)
+    if (actor_componet->getOwner() != nullptr)
         return false;
 
     bool componentRemoved = false;
