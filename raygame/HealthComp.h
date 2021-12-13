@@ -11,7 +11,7 @@ public:
 	void start() override;
 	void update(float deltaTime) override;
 
-	void onCollision(Actor* actor) override;
+	void onCollision(Actor* actor);
 
 private:
 	int m_maxHealth;

@@ -33,18 +33,22 @@ void Engine::start()
 	Player* player = new Player(10, 10, 10, 10, 10);
 	Enemy* enemy = new Enemy(19, 10, "enemy1", 10, 10, player);
 
+
+
 	scene->addActor(player);
 	scene->addActor(enemy);
 
 	//Start the scene
 	m_currentSceneIndex = addScene(new Scene());
 	m_scenes[m_currentSceneIndex]->start();
+
 }
 
 void Engine::update(float deltaTime)
 {
 	//Clean up actors marked for destruction
 	destroyActorsInList();
+	
 
 	//Update scene
 	m_scenes[m_currentSceneIndex]->update(deltaTime);

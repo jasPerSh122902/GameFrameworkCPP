@@ -25,32 +25,52 @@ Actor::Actor(float x, float y, const char* name = "Actor")
 void Actor::start()
 {
     m_started = true;
+    
+    
 }
 
 Componet* Actor::addComponent(Componet* actor_componet)
 {
-    if (actor_componet->getOwner() != nullptr)
+    //returns null if this componet has an owner already
+    Actor* owner = actor_componet->getOwner();
+    if (owner)
         return nullptr;
 
-    Componet** tempArray = new Componet * [m_componetsCount + 1];
+    actor_componet->assignOwner(this);
 
-    int j = 0;
+    //Create a new array with a size one greater than our old array
+    Componet** tempArray = new Componet * [m_componetsCount + 1];
+    //Copy the values form the old array to the new array
     for (int i = 0; i < m_componetsCount; i++)
     {
         tempArray[i] = m_componet[i];
-        j++;
     }
 
-    tempArray[j] = actor_componet;
-    m_componetsCount + 1;
+    //Set the last value in the new array
+    tempArray[m_componetsCount] = actor_componet;
     m_componet = tempArray;
-
+    //increments the counter
+    m_componetsCount++;
+    //returns the pointer
     return actor_componet;
 }
 
-bool Actor::removeComponent(Componet* actor_componet)
+Componet* Actor::getComponent(const char* componetName)
 {
-    if (actor_componet->getOwner() != nullptr)
+    //Iterates through the componet array...
+    for (int i = 0; i < m_componetsCount; i++)
+    {
+        //Return the componetnt if the name is the same as the current componet
+        if (strcmp(m_componet[i]->getName(), componetName) == 0)
+            return m_componet[i];
+    }
+    //returns nullprtr if the componet is not in the list
+    return nullptr;
+}
+
+bool Actor::removeComponent(Componet* componet)
+{
+    if (!componet)
         return false;
 
     bool componentRemoved = false;
@@ -62,57 +82,109 @@ bool Actor::removeComponent(Componet* actor_componet)
     //Copy values from the old array to the new array
     for (int i = 0; i < m_componetsCount; i++)
     {
-        if (actor_componet != m_componet[i])
+        if (componet != m_componet[i])
         {
             newArray[j] = m_componet[i];
             j++;
         }
         else
-        {
             componentRemoved = true;
-        }
     }
-    //Set the old array to the new array
+    //checks to see if The removed is true...
     if (componentRemoved)
     {
+        //...sets the old array to the new array
         m_componet = newArray;
         m_componetsCount--;//decrements the counter.
+        //deletes the componet
+        delete(componet);
     }
+    //delets the array
+    delete[] newArray;
     //Return whether or not the removal was successful
     return componentRemoved;
 }
 
-Componet* Actor::getComponent(const char* actor_componet)
+bool Actor::removeComponent(const char* name)
 {
+    if (!name)
+        return false;
+
+    bool componentRemoved = false;
+    //Create a new array with a size one less than our old array
+    Componet* componetoDelete = nullptr;
+    Componet** newArray = new Componet * [m_componetsCount - 1];
+
+    //Create variable to access tempArray index
+    int j = 0;
+    //Copy values from the old array to the new array
     for (int i = 0; i < m_componetsCount; i++)
     {
-        if (m_componet[i]->getName() == actor_componet)
-            return m_componet[i];
+        //checks to see if the name of the componet and the name is equal
+        if (strcmp(m_componet[i]->getName(), name) == 0)
+        {
+            //makes the new array equal to the old array
+            newArray[j] = m_componet[i];
+            //increment j
+            j++;
+        }
+        else
+        {
+            componentRemoved = true;
+            componetoDelete = m_componet[i];
+        }
+            
     }
-    return nullptr;
+    //checks to see if The removed is true...
+    if (componentRemoved)
+    {
+        //...sets the old array to the new array
+        m_componet = newArray;
+        m_componetsCount--;//decrements the counter.
+        //deletes the componet
+        delete componetoDelete;
+    }
+    //delets the array
+    delete[] newArray;
+    //Return whether or not the removal was successful
+    return componentRemoved;
 }
 
 void Actor::update(float deltaTime)
 {
+    for (int i = 0; i < m_componetsCount; i++)
+    {
+        if (m_componet[i]->getStarted())
+            m_componet[i]->start();
 
+        m_componet[i]->update(deltaTime);
+    }
 }
 
 void Actor::draw()
 {
+    for (int i = 0; i < m_componetsCount; i++)
+        m_componet[i]->draw();
 }
 
 void Actor::end()
 {
     m_started = false;
+
+    for (int i = 0; i < m_componetsCount; i++)
+        m_componet[i]->end();
 }
 
 void Actor::onCollision(Actor* other)
 {
-
+    for (int i = 0; i < m_componetsCount; i++)
+        m_componet[i]->oncollison(other);
 }
 
 void Actor::onDestroy()
 {
+    for (int i = 0; i < m_componetsCount; i++)
+        m_componet[i]->onDistroy();
     //Removes this actor from its parent if it has one
     if (getTransform()->getParent())
         getTransform()->getParent()->removeChild(getTransform());

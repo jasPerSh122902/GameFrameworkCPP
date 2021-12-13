@@ -10,6 +10,6 @@ Enemy::Enemy(float x, float y, const char* name, float speed, int maxHealth, Act
 void Enemy::start()
 {
 	Character::start();
-	Movement* movementComponet = new Movement(this, 5);
+	Movement* movementComponet = new Movement("MoveMent");
 	addComponent(movementComponet);
 }

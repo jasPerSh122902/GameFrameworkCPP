@@ -7,9 +7,8 @@ Componet::Componet()
 	m_stated = false;
 }
 
-Componet::Componet(Actor* actor, const char* name)
+Componet::Componet( const char* name)
 {
-	m_owner = actor;
 	m_name = name;
 	m_stated = false;
 }
@@ -18,6 +17,14 @@ Componet::Componet(Actor* actor, const char* name)
 Componet::~Componet()
 {
 
+}
+
+void Componet::assignOwner(Actor* owner)
+{
+	if (!getOwner())
+		return;
+
+	m_owner = owner;
 }
 
 void Componet::update(float deltaTime)
