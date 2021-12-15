@@ -11,7 +11,6 @@ ActorArray Engine::m_actorsToDelete = ActorArray();
 int Engine::m_sceneCount = 0;
 int Engine::m_currentSceneIndex = 0;
 
-
 Engine::Engine()
 {
 	m_applicationShouldClose = false;

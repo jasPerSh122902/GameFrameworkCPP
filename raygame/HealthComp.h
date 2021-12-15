@@ -16,5 +16,7 @@ public:
 private:
 	int m_maxHealth;
 	int m_currentHealth;
+	float m_damageCooldown;
+	float m_timeSinceLastHit;
 };
 

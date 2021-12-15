@@ -2,6 +2,7 @@
 #include "Input.h"
 #include "Movement.h"
 #include "Sprite.h"
+#include "Transform2D.h"
 
 //Player::Player(float x, float y, int health, float speed, int maxHealth)
 //{
@@ -28,7 +29,5 @@ void Player::update(float deltaTime)
 	//allows for movement
 	MathLibrary::Vector2 moveDirection = m_inputComponet->getMoveAxis();
 
-	m_movementComponet->setVelocity(moveDirection * 300);
-
-	
+	m_movementComponet->getOwner()->getTransform()->setForward(moveDirection * 300);
 }

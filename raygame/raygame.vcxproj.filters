@@ -53,9 +53,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Charactor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="HealthComp.cpp">
       <Filter>Componets</Filter>
     </ClCompile>
@@ -107,9 +104,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Charactor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HealthComp.h">
