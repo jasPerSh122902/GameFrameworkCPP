@@ -4,7 +4,7 @@
 Scene::Scene()
 {
     m_actorCount = 0;
-    m_actors =  DynamicArray<Actor>();
+    m_actors =  DynamicArray<Actor*>();
     m_world = new MathLibrary::Matrix3();
 }
 
@@ -15,12 +15,12 @@ MathLibrary::Matrix3* Scene::getWorld()
 
 void Scene::addUIElement(Actor* actor)
 {
-    m_UIElements.addItems(actor);
+    m_UIElements.addItem(actor);
 
     //Adds all children of the UI to the scene
     for (int i = 0; i < actor->getTransform()->getChildCount(); i++)
     {
-        m_UIElements.addItems(actor->getTransform()->getChildren()[i]->getOwner());
+        m_UIElements.addItem(actor->getTransform()->getChildren()[i]->getOwner());
     }
 }
 
@@ -36,12 +36,12 @@ bool Scene::removeUIElement(Actor* actor)
 
 void Scene::addActor(Actor* actor)
 {
-    m_actors.addItems(actor);
+    m_actors.addItem(actor);
 
     //Adds all children of the actor to the scene
     for (int i = 0; i < actor->getTransform()->getChildCount(); i++)
     {
-        m_actors.addItems(actor->getTransform()->getChildren()[i]->getOwner());
+        m_actors.addItem(actor->getTransform()->getChildren()[i]->getOwner());
     }
 }
 
