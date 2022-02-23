@@ -9,7 +9,7 @@
 void MainScene::start()
 {
 	Player* player = new Player(250, 300, "Player");
-	player->getTransform()->setScale({ 350,350 });
+	player->getTransform()->setScale({ 250,250 });
 	addActor(player);
 
 	Enemy* enemy = new Enemy(400, 300, "Player", player);

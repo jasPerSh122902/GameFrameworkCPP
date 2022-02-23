@@ -1,7 +1,7 @@
 #include "HealthComp.h"
 
 HealthComp::HealthComp(int maxHealth, Actor* owner) :
-	Componet::Componet("Health Component")
+	Componet::Componet()
 {
 	m_maxHealth = maxHealth;
 	m_currentHealth = maxHealth;

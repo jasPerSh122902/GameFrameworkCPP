@@ -16,11 +16,6 @@ void Player::start()
 	m_movementComponet = dynamic_cast<Movement*>(addComponent(new Movement()));
 	m_movementComponet->setMaxSpeed(500);
 	m_spriteComponet = dynamic_cast<Sprite*>(addComponent(new Sprite("Sprite/Learth.png")));
-
-
-	//Set spawn point here
-	//Set move speed
-	//Set position clamps
 }
 
 void Player::update(float deltaTime)

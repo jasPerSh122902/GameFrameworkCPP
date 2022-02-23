@@ -10,7 +10,7 @@ class Input :
 	public Componet
 {
 public:
-	Input(const char* name = "InputComponet") : Componet::Componet(name) {}
+	Input(const char* name = "InputComponet") : Componet::Componet() {}
 
 	MathLibrary::Vector2 getMoveAxis();
 

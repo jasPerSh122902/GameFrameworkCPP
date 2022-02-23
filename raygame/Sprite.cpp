@@ -10,7 +10,7 @@ Sprite::Sprite(Texture2D* texture, const char* name)
 	texture = m_texture;
 }
 
-Sprite::Sprite(const char* path, const char* name) : Componet::Componet(name)
+Sprite::Sprite(const char* path, const char* name) : Componet::Componet()
 {
 	m_texture = new Texture2D(RAYLIB_H::LoadTexture(path));
 }

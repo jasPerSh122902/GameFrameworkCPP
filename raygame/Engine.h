@@ -100,7 +100,6 @@ public:
     void run();
 
 private:
-    void destroyActorsInList();
     static void addActorToDeletionList(Actor* actor);
     void start();
     void update(float delaTime);

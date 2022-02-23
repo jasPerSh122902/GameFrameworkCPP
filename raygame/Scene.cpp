@@ -24,11 +24,6 @@ void Scene::addUIElement(Actor* actor)
     }
 }
 
-bool Scene::removeUIElement(int index)
-{
-    return m_UIElements.removeItem(index);
-}
-
 bool Scene::removeUIElement(Actor* actor)
 {
     return m_UIElements.removeItem(actor);
@@ -43,11 +38,6 @@ void Scene::addActor(Actor* actor)
     {
         m_actors.addItem(actor->getTransform()->getChildren()[i]->getOwner());
     }
-}
-
-bool Scene::removeActor(int index)
-{
-    return m_actors.removeItem(index);
 }
 
 bool Scene::removeActor(Actor* actor)

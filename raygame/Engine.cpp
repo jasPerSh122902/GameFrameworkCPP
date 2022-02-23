@@ -28,14 +28,6 @@ void Engine::start()
 	InitWindow(screenWidth, screenHeight, "Intro To C++");
 	SetTargetFPS(0);
 
-	Scene* scene = new Scene();
-
-	Player* player = new Player(10, 10, 10, 10, 10);
-	Enemy* enemy = new Enemy(19, 10, "enemy1", 10, 10, player);
-
-	scene->addActor(player);
-	scene->addActor(enemy);
-
 	//Start the scene
 	m_currentSceneIndex = addScene(new MainScene());
 	m_scenes[m_currentSceneIndex]->start();
@@ -45,8 +37,6 @@ void Engine::start()
 void Engine::update(float deltaTime)
 {
 	//Clean up actors marked for destruction
-	destroyActorsInList();
-	
 
 	//Update scene
 	m_scenes[m_currentSceneIndex]->update(deltaTime);
@@ -142,16 +132,16 @@ int Engine::addScene(Scene* scene)
 void Engine::addActorToDeletionList(Actor* actor)
 {
 	//return if the actor is already going to be deleted
-	if (m_actorsToDelete.contains(actor))
+	if (m_actorsToDelete.contains(&actor))
 		return;
 
 	//Add actor to deletion list
-	m_actorsToDelete.addItems(actor);
+	m_actorsToDelete.addItem(actor);
 
 	//Add all the actors children to the deletion list
 	for (int i = 0; i < actor->getTransform()->getChildCount(); i++)
 	{
-		m_actorsToDelete.addItems(actor->getTransform()->getChildren()[i]->getOwner());
+		m_actorsToDelete.addItem(actor->getTransform()->getChildren()[i]->getOwner());
 	}
 }
 
@@ -219,29 +209,9 @@ bool Engine::getKeyPressed(int key)
 void Engine::destroy(Actor* actor)
 {
 	addActorToDeletionList(actor);
+	
 }
 
-void Engine::destroyActorsInList()
-{
-	//Iterate through deletion list
-	for (int i = 0; i < m_actorsToDelete.getLength(); i++)
-	{
-		//Remove actor from the scene
-		Actor* actorToDelete = m_actorsToDelete.addItems(i);
-		if (!getCurrentScene()->removeActor(actorToDelete))
-			getCurrentScene()->removeUIElement(actorToDelete);
-
-		//Call actors clean up functions
-		actorToDelete->end();
-		actorToDelete->onDestroy();
-
-		//Delete the actor
-		delete actorToDelete;
-	}
-
-	//Clear the array
-	m_actorsToDelete = DynamicArray<Actor*>();
-}
 
 void Engine::CloseApplication()
 {

@@ -21,7 +21,7 @@ void Enemy::start()
 void Enemy::update(float deltaTime)
 {
 	Actor::update(deltaTime);
-	//allows for movement
+	//allows for movement GET THIS OUT
 	MathLibrary::Vector2 moveDirection = m_inputComponet->getMoveAxis();
 
 	m_movementComponet->setVelocity(moveDirection * 30);

@@ -9,7 +9,7 @@ class Movement :
 {
 public:
 	//base comstroctor for the movement
-	Movement(const char* name = "MoveComponet") : Componet::Componet(name) {}
+	Movement(const char* name = "MoveComponet") : Componet::Componet() {}
 
 	/// <summary>
 	/// Gets the current speed and direction of theis actor in the form of a velocity

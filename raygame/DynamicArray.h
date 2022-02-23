@@ -11,6 +11,7 @@ public:
 	DynamicArray();
 	~DynamicArray();
 	void addItem(T item);
+	void addItem(int item);
 	void addItems(T items[], int size);
 	bool removeItem(T item);
 	void sortItem();
@@ -36,6 +37,24 @@ inline void DynamicArray<T>::addItem(T item)
 {
 	//Create a new array with a size one greater than our old array
 	T* appendedArray = new T[getLength() + 1];
+	//Copy the values from the old array to the new array
+	for (int i = 0; i < getLength(); i++)
+		appendedArray[i] = m_items[i];
+
+	//Set the last value in the new array to be the actor we want to add
+	appendedArray[getLength()] = item;
+	//dealicating all of the old pointers in the array;
+	delete[] m_items;
+	//Set old array to hold the values of the new array
+	m_items = appendedArray;
+	m_length++;
+}
+
+template<typename T>
+inline void DynamicArray<T>::addItem(int item)
+{
+	//Create a new array with a size one greater than our old array
+	int* appendedArray = new int[getLength() + 1];
 	//Copy the values from the old array to the new array
 	for (int i = 0; i < getLength(); i++)
 		appendedArray[i] = m_items[i];
@@ -139,7 +158,7 @@ inline bool DynamicArray<T>::contains(T* actor)
     for (int i = 0; i < m_length; i++)
     {
         //return the current actor if it matches the argument
-        if (m_items[i] == actor)
+        if (&m_items[i] == actor)
             return true;
     }
     return false;

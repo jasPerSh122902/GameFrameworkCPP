@@ -8,14 +8,8 @@ public:
 	//basuc constructor for componet
 	Componet();
 
-	//is a constructor for componet that takes in a pointer actor and a const char pointer
-	Componet(const char* name);
-
 	//destructs the componet
 	virtual ~Componet();
-
-	//gets the name of the componet
-	const char* getName() { return m_name; }
 
 	//gets the ower that is assigned to the componet
 	Actor* getOwner() { return m_owner; }
@@ -45,7 +39,6 @@ public:
 
 private:
 	Actor* m_owner;
-	const char* m_name;
 	bool m_stated;
 };
 
