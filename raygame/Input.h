@@ -22,10 +22,10 @@ private:
 	RAYLIB_H::KeyboardKey m_up = RAYLIB_H::KeyboardKey::KEY_W;
 	RAYLIB_H::KeyboardKey m_right = RAYLIB_H::KeyboardKey::KEY_D;
 	//look direction keys
-	RAYLIB_H::KeyboardKey m_lookDown = RAYLIB_H::KeyboardKey::KEY_DOWN;
+	/*RAYLIB_H::KeyboardKey m_lookDown = RAYLIB_H::KeyboardKey::KEY_DOWN;
 	RAYLIB_H::KeyboardKey m_lookLeft = RAYLIB_H::KeyboardKey::KEY_LEFT;
 	RAYLIB_H::KeyboardKey m_lookUp = RAYLIB_H::KeyboardKey::KEY_UP;
-	RAYLIB_H::KeyboardKey m_lookRight = RAYLIB_H::KeyboardKey::KEY_RIGHT;
+	RAYLIB_H::KeyboardKey m_lookRight = RAYLIB_H::KeyboardKey::KEY_RIGHT;*/
 
 	
 };

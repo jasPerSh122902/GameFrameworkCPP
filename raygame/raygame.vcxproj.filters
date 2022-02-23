@@ -41,9 +41,6 @@
     <ClCompile Include="Transform2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ActorArray.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Componet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -71,6 +68,9 @@
     <ClCompile Include="SHOOT.cpp">
       <Filter>Componets</Filter>
     </ClCompile>
+    <ClCompile Include="FollowComponet.cpp">
+      <Filter>Componets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -92,9 +92,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Transform2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ActorArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Componet.h">
@@ -123,6 +120,12 @@
     </ClInclude>
     <ClInclude Include="SHOOT.h">
       <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="FollowComponet.h">
+      <Filter>Componets</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
