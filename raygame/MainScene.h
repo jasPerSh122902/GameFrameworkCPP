@@ -6,4 +6,3 @@ class MainScene :
 public:
 	void start();
 };
-

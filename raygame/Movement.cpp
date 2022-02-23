@@ -10,4 +10,3 @@ void Movement::update(float deltaTime)
 	//set the actors position to be the new position found
 	getOwner()->getTransform()->setLocalPosition(newPosition);
 }
-

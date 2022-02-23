@@ -1,5 +1,7 @@
 #pragma once
 #include "Componet.h"
+#pragma once
+#include "Componet.h"
 #include <raylib.h>
 #include <Vector2.h>
 

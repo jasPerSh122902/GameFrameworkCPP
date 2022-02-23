@@ -19,7 +19,7 @@ public:
     /// <summary>
     /// Called during the first update after an actor is added to a scene.
     /// </summary>
-     void start() override;
+    void start() override;
     void update(float deltaTime) override;
 
 private:

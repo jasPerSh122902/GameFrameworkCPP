@@ -3,8 +3,8 @@
 #include "Movement.h"
 #include "Sprite.h"
 
-Enemy::Enemy(float x, float y, const char* name,Actor* targetActor) :
-	Actor(x,y,name)
+Enemy::Enemy(float x, float y, const char* name, Actor* targetActor) :
+	Actor(x, y, name)
 {
 	m_targetActor = targetActor;
 }

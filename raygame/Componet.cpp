@@ -7,7 +7,7 @@ Componet::Componet()
 	m_stated = false;
 }
 
-Componet::Componet( const char* name)
+Componet::Componet(const char* name)
 {
 	m_name = name;
 }

@@ -33,7 +33,7 @@ void Sprite::draw()
 	//gets the world POSISTION of the owner
 	//top is x and the bottom is y
 	//makes the up with the transform of xy, and the yy
-	MathLibrary::Vector2 up = { getOwner()->getTransform()->getGlobalMatrix()->m01, 
+	MathLibrary::Vector2 up = { getOwner()->getTransform()->getGlobalMatrix()->m01,
 								getOwner()->getTransform()->getGlobalMatrix()->m11 };
 	//gets the forward of the actor
 	MathLibrary::Vector2 forward = getOwner()->getTransform()->getForward();
